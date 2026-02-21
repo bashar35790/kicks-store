@@ -1,11 +1,17 @@
-import Image from "next/image";
+import HeroSection from "@/components/home/HeroSection";
+import { NewDrops } from "@/components/home/NewDrops";
+import { CategoriesSection } from "@/components/home/CategoriesSection";
+import { ReviewsSection } from "@/components/home/ReviewsSection";
+import { NewsletterSection } from "@/components/home/NewsletterSection";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <main>
-          <h1>Heoolo</h1>
-        </main>
-    </div>
+    <>
+      <HeroSection />
+      <NewDrops />
+      <CategoriesSection />
+      <ReviewsSection />
+      <NewsletterSection />
+    </>
   );
 }
