@@ -1,9 +1,9 @@
-import StoreProvider from "@/store/provider";
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import StoreProvider from "@/store/provider";
 import "./globals.css";
-import { Rubik } from 'next/font/google';
+import { Rubik } from "next/font/google";
 
 // configure the font
 const rubik = Rubik({

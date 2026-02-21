@@ -17,7 +17,7 @@ export default function HeroSection() {
           <img
             src="/hero.png"
             alt="Nike Air Max"
-            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            className="w-full scale-105 h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
         </div>
 

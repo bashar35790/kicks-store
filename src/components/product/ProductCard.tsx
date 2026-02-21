@@ -30,7 +30,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             : fallbackImages[index % fallbackImages.length];
 
     return (
-        <div className="w-full max-w-[320px] h-fit">
+        <div className="w-full max-w-[320px] h-[486px]">
 
             {/* Image Card */}
             <div className="relative h-fit bg-[#f3f3f3] rounded-[28px] overflow-hidden group border-8 border-[#FAFAFA]">
