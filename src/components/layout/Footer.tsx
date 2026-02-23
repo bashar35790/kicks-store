@@ -42,7 +42,7 @@ export const Footer = () => {
       <footer className="relative -top-20  text-gray-300 pt-20 pb-12 overflow-hidden rounded-t-[40px] -mt-10">
 
 
-        <div className="bg-[#1a1a1a] p-16 rounded-t-[40px] max-w-7xl mx-auto px-6 relative z-10 pb-50 relative">
+        <div className="bg-[#1a1a1a] p-16 rounded-t-[40px] max-w-7xl mx-auto px-6 z-10 pb-50 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
 
             {/* About Us */}
