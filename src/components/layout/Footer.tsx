@@ -108,7 +108,7 @@ export const Footer = () => {
           </div>
 
           {/* Huge Background Text */}
-          <div className="absolute top-80%  z-100 left-2.5 opacity-100">
+          <div className="absolute bottom-0 z-100 left-2.5 opacity-100">
             <img src="/footerlogo.png" alt="footerlogo" className="cover" />
           </div>
 
