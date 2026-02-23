@@ -3,13 +3,29 @@ import { Button } from "../ui/Button";
 
 async function getNewDrops() {
   try {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products/?offset=0&limit=4", {
-      next: { revalidate: 3600 }
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    
+    const res = await fetch("https://api.escuelajs.co/api/v1/products?limit=4", {
+      next: { revalidate: 3600 },
+      signal: controller.signal,
+      headers: {
+        'Accept': 'application/json',
+      },
     });
-    if (!res.ok) throw new Error("Failed to fetch products");
-    return res.json();
+    
+    clearTimeout(timeoutId);
+    
+    if (!res.ok) {
+      console.error("API Response Status:", res.status, res.statusText);
+      throw new Error(`Failed to fetch products: ${res.status}`);
+    }
+    
+    const data = await res.json();
+    return Array.isArray(data) ? data : [];
   } catch (error) {
-    console.error("Error fetching new drops:", error);
+    console.error("Error fetching new drops:", error instanceof Error ? error.message : String(error));
+    // Return empty array instead of failing
     return [];
   }
 }

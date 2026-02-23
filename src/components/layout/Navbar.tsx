@@ -3,13 +3,14 @@
 import Link from "next/link";
 import { Search, User, ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // Mock cart items count
-  const cartItemsCount = 2;
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartItemsCount = cartItems.length;
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md mt-8">
@@ -45,14 +46,16 @@ export default function Navbar() {
             <button className="text-gray-600 hover:text-primary transition-colors" aria-label="Account">
               <User className="w-5 h-5" />
             </button>
-            <button className="text-gray-600 hover:text-primary transition-colors relative" aria-label="Cart">
-              <ShoppingCart className="w-5 h-5" />
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center justify-center">
-                  {cartItemsCount}
-                </span>
-              )}
-            </button>
+            <Link href="/cart">
+              <button className="text-gray-600 hover:text-primary transition-colors relative" aria-label="Cart">
+                <ShoppingCart className="w-5 h-5" />
+                {cartItemsCount > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full flex items-center justify-center">
+                    {cartItemsCount}
+                  </span>
+                )}
+              </button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -86,14 +89,16 @@ export default function Navbar() {
             <button className="text-gray-600 hover:text-primary transition-colors p-2 rounded-full bg-gray-50">
               <User className="w-5 h-5" />
             </button>
-            <button className="text-gray-600 hover:text-primary transition-colors p-2 rounded-full bg-gray-50 relative">
-              <ShoppingCart className="w-5 h-5" />
-              {cartItemsCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
-                  {cartItemsCount}
-                </span>
-              )}
-            </button>
+            <Link href="/cart">
+              <button className="text-gray-600 hover:text-primary transition-colors p-2 rounded-full bg-gray-50 relative">
+                <ShoppingCart className="w-5 h-5" />
+                {cartItemsCount > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">
+                    {cartItemsCount}
+                  </span>
+                )}
+              </button>
+            </Link>
           </div>
         </div>
       )}

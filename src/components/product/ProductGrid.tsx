@@ -4,7 +4,7 @@ import { useGetProductsQuery } from "@/features/products/productsApi";
 import ProductCard from "./ProductCard";
 
 export default function ProductGrid() {
-    const { data, isLoading, error } = useGetProductsQuery("");
+    const { data, isLoading, error } = useGetProductsQuery();
 
     if (!data?.length) return <p>No products found</p>;
 

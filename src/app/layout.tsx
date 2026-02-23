@@ -27,7 +27,7 @@ export default function RootLayout({
       <body className={`${rubik.className} bg-background text-foreground antialiased min-h-screen flex flex-col`}>
         <StoreProvider>
           <Navbar />
-          <main className="flex-grow">
+          <main className="grow">
             {children}
           </main>
           <Footer />

@@ -11,7 +11,7 @@ interface Product {
 
 interface ProductCardProps {
     product: Product;
-    index: number;
+    index?: number;
 }
 
 const fallbackImages = [
@@ -21,7 +21,7 @@ const fallbackImages = [
     "/product4.jpg",
 ];
 
-export default function ProductCard({ product, index }: ProductCardProps) {
+export default function ProductCard({ product, index = 0 }: ProductCardProps) {
     const cleanedImage = product.images?.[0]?.replace(/[\[\]"]/g, "");
 
     const imageUrl =
