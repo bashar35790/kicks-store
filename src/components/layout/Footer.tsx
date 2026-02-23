@@ -33,12 +33,7 @@ export const Footer = () => {
 
           {/* Right Big Text */}
           <div className="flex items-center gap-4 relative">
-            <div className="text-[12vw] font-extrabold text-white/90 tracking-tight hidden lg:block">
-              KICKS
-            </div>
-            <div className="w-7 h-7 absolute top-10 right-0 -translate-x-1/2 -translate-y-1/2 bg-amber-600 text-center rounded-full">
-              +
-            </div>
+            <img src="/newsletterLogo.png" alt="newsletterlogo" className="object-cover" />
           </div>
         </div>
       </section>
