@@ -47,7 +47,7 @@ export default function HeroSection() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer hover:border-white transition-colors">
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-transparent cursor-pointer transition-colors">
               <img
                 src="/hero-show-2.png"
                 alt="Thumbnail 2"
